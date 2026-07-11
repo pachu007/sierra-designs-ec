@@ -1,0 +1,6 @@
+{
+  "name": "Sierra Designs EC",
+  "description": "Landing page interactiva para taller de CNC en Ecuador especializado en letreros y bandejas de madera y PVC personalizadas, con carruseles, parallax sutil, tarjetas interactivas y timeline dinámico.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
