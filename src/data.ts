@@ -1,5 +1,18 @@
 import { ProductCard, CarouselItem, TimelineStep, ProcessStep } from './types';
 
+// Imports de imágenes locales — necesarios para que Vite las procese
+// correctamente y respete el "base path" al publicar en GitHub Pages
+import heroWoodCnc from './assets/images/hero_wood_cnc_1783808468440.jpg';
+import letreroPvcNegocio from './assets/images/letrero_pvc_negocio_1783808509664.jpg';
+import bandejaWoodCustom from './assets/images/bandeja_wood_custom_1783808488544.jpg';
+import casaMascotaMadera from './assets/images/casa_mascota_madera_1783808519324.jpg';
+import celosiaMadera from './assets/images/celosia_madera_1783808496152.jpg';
+
+// Fotos reales subidas por el cliente
+import carvedSignCoffeeShop from './assets/images/Carved_sign_on_coffee_shop.jpeg';
+import carvedSignManCave from './assets/images/Carved_sign_in_man_cave.jpeg';
+import cncRouterCuttingPineWood from './assets/images/CNC_router_cutting_pine_wood.jpeg';
+
 export const HERO_DATA = {
   eyebrow: "Letreros y piezas talladas · Hecho en Ecuador, entregado en todo el país",
   title: "Dale a tu bar, negocio o espacio esa pieza que nadie más tiene.",
@@ -13,50 +26,50 @@ export const LETREROS_CARDS: ProductCard[] = [
     title: "Bares y restaurantes",
     description: "Letreros rústicos o modernos con identidad propia para tu local que atraen miradas y fotos de clientes.",
     badge: "Más Vendido",
-    image: "/src/assets/images/letrero_wood_bar_1783808477464.jpg"
+    image: carvedSignCoffeeShop
   },
   {
     id: "l2",
     title: "Man caves",
     description: "Tu espacio, tu estilo. Diseños rebeldes, escudos de fútbol retro, marcas de whisky o tu propio logotipo personalizado.",
     badge: "100% Personalizado",
-    image: "https://images.unsplash.com/photo-1590059157297-c8fb3ca8b663?auto=format&fit=crop&q=80&w=600"
+    image: carvedSignManCave
   },
   {
     id: "l3",
     title: "Marcas y negocios",
     description: "Rótulos y logotipos en PVC o madera que transmiten profesionalismo e innovación desde el primer vistazo.",
     badge: "Alta Precisión",
-    image: "/src/assets/images/letrero_pvc_negocio_1783808509664.jpg"
+    image: letreroPvcNegocio
   }
 ];
 
 export const LETREROS_CAROUSEL: CarouselItem[] = [
   {
     id: "lc1",
-    src: "/src/assets/images/letrero_wood_bar_1783808477464.jpg",
-    alt: "letrero-tallado-madera-bar-el-alambique-ecuador.jpg",
-    title: "Letrero de Bar rústico",
-    description: "Madera de roble macizo con tallado profundo y acabados en laca protectora brillante para exteriores."
+    src: carvedSignCoffeeShop,
+    alt: "letrero-tallado-madera-cafeteria-ecuador.jpg",
+    title: "Placa tallada para cafetería",
+    description: "Estilo retro con logotipo tallado en relieve, perfecto para interiores con luz indirecta cálida."
   },
   {
     id: "lc2",
-    src: "/src/assets/images/letrero_pvc_negocio_1783808509664.jpg",
+    src: carvedSignManCave,
+    alt: "letrero-tallado-madera-man-cave-ecuador.jpg",
+    title: "Letrero para Man Cave",
+    description: "Diseño personalizado con carácter propio, tallado en madera con acabado oscuro para espacios personales."
+  },
+  {
+    id: "lc3",
+    src: letreroPvcNegocio,
     alt: "letrero-pvc-personalizado-local-comercial-quito.jpg",
     title: "Logotipo corporativo en PVC",
     description: "Corte milimétrico en PVC de alta densidad con pintura automotriz de larga duración en acabado mate."
   },
   {
-    id: "lc3",
-    src: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&q=80&w=800",
-    alt: "letrero-madera-restaurante-cumbaya.jpg",
-    title: "Placa tallada para cafetería",
-    description: "Estilo retro con logotipo tallado en relieve, perfecto para interiores con luz indirecta cálida."
-  },
-  {
     id: "lc4",
-    src: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800",
-    alt: "taller-cnc-madera-riobamba-detalles.jpg",
+    src: cncRouterCuttingPineWood,
+    alt: "taller-cnc-madera-riobamba-proceso-grabado.jpg",
     title: "Proceso de grabado CNC",
     description: "La fresa CNC cortando capas milimétricas de madera de pino curada para una definición perfecta de los bordes."
   }
@@ -68,7 +81,7 @@ export const BANDEJAS_CARDS: ProductCard[] = [
     title: "Regalo personalizado",
     description: "Sorprende con nombres, fechas memorables o frases cortas grabadas en madera fina. El regalo perfecto.",
     badge: "Excelente Regalo",
-    image: "/src/assets/images/bandeja_wood_custom_1783808488544.jpg"
+    image: bandejaWoodCustom
   },
   {
     id: "b2",
@@ -89,7 +102,7 @@ export const BANDEJAS_CARDS: ProductCard[] = [
 export const BANDEJAS_CAROUSEL: CarouselItem[] = [
   {
     id: "bc1",
-    src: "/src/assets/images/bandeja_wood_custom_1783808488544.jpg",
+    src: bandejaWoodCustom,
     alt: "bandeja-madera-personalizada-grabada-monograma-ecuador.jpg",
     title: "Bandeja Monograma Premium",
     description: "Bandeja tallada con asas integradas y monograma familiar grabado con detalle fino en madera de canelo."
@@ -148,14 +161,14 @@ export const TAMBIEN_HACEMOS = {
   mascotas: {
     title: "Casas para mascotas",
     description: "Casitas de madera de diseño moderno, térmicas y súper resistentes, con el nombre de tu mascota grabado sobre la entrada principal.",
-    image: "/src/assets/images/casa_mascota_madera_1783808519324.jpg",
+    image: casaMascotaMadera,
     alt: "casa-mascota-madera-diseno-moderno-ecuador.jpg",
     link: "https://wa.me/593987654321?text=Hola!%20Me%20interesa%20la%20casa%20para%20mascotas%20personalizada"
   },
   celosias: {
     title: "Celosías decorativas",
     description: "Paneles divisores de ambiente tallados en MDF o madera sólida con patrones geométricos, árabes o minimalistas a la medida de tu espacio.",
-    image: "/src/assets/images/celosia_madera_1783808496152.jpg",
+    image: celosiaMadera,
     alt: "celosia-madera-paneles-decorativos-cnc-riobamba.jpg",
     link: "https://wa.me/593987654321?text=Hola!%20Quiero%20cotizar%20celosias%20de%20madera%20personalizadas"
   }
