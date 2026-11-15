@@ -14,7 +14,8 @@ import {
   Layers3, 
   ArrowRight,
   TrendingUp,
-  Award
+  Award,
+  ChevronDown
 } from 'lucide-react';
 
 import { 
@@ -26,14 +27,16 @@ import {
   TAMBIEN_HACEMOS, 
   PROCESS_STEPS, 
   CIUDADES_COBERTURA, 
-  STATS 
+  SEASONAL_BANNER,
+  FAQ_ITEMS,
+  SITE_ADDRESS
 } from './data';
 
 import TiltCard from './components/TiltCard';
-import AnimatedCounter from './components/AnimatedCounter';
 import Carousel from './components/Carousel';
 import ShippingTimeline from './components/ShippingTimeline';
 import CustomCursor from './components/CustomCursor';
+import heroWoodCnc from './assets/images/hero_wood_cnc_1783808468440.jpg';
 
 export function SierraLogo({ className = "w-10 h-10 text-dorado" }: { className?: string }) {
   return (
@@ -154,12 +157,13 @@ export default function App() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
+            <a href="#regalos" className="font-medium text-xs uppercase tracking-wider text-crema hover:text-dorado transition-all">Regalos</a>
             <a href="#letreros" className="font-medium text-xs uppercase tracking-wider text-crema hover:text-dorado transition-all">Letreros</a>
-            <a href="#bandejas" className="font-medium text-xs uppercase tracking-wider text-crema hover:text-dorado transition-all">Bandejas</a>
             <a href="#envios" className="font-medium text-xs uppercase tracking-wider text-crema hover:text-dorado transition-all">Envíos</a>
-            <a href="#otros-productos" className="font-medium text-xs uppercase tracking-wider text-crema hover:text-dorado transition-all">Otros</a>
             <a href="#como-trabajamos" className="font-medium text-xs uppercase tracking-wider text-crema hover:text-dorado transition-all">Proceso</a>
+            <a href="#preguntas" className="font-medium text-xs uppercase tracking-wider text-crema hover:text-dorado transition-all">Preguntas</a>
             <a href="#contacto" className="font-medium text-xs uppercase tracking-wider text-crema hover:text-dorado transition-all">Contacto</a>
+            <a href="/en/" hrefLang="en" lang="en" className="font-medium text-xs uppercase tracking-wider text-dorado hover:text-crema transition-all">English</a>
           </nav>
 
           {/* Desktop Call To Action (WhatsApp) */}
@@ -193,18 +197,18 @@ export default function App() {
         >
           <div className="px-4 py-6 space-y-4 flex flex-col">
             <a 
+              href="#regalos" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-semibold text-crema hover:text-dorado transition-colors py-2 border-b border-verde-oscuro/20"
+            >
+              Regalos en madera
+            </a>
+            <a 
               href="#letreros" 
               onClick={() => setMobileMenuOpen(false)}
               className="text-base font-semibold text-crema hover:text-dorado transition-colors py-2 border-b border-verde-oscuro/20"
             >
               Letreros tallados
-            </a>
-            <a 
-              href="#bandejas" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-semibold text-crema hover:text-dorado transition-colors py-2 border-b border-verde-oscuro/20"
-            >
-              Bandejas de madera
             </a>
             <a 
               href="#envios" 
@@ -228,11 +232,26 @@ export default function App() {
               Cómo trabajamos
             </a>
             <a 
+              href="#preguntas" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-semibold text-crema hover:text-dorado transition-colors py-2 border-b border-verde-oscuro/20"
+            >
+              Preguntas frecuentes
+            </a>
+            <a 
               href="#contacto" 
               onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-semibold text-crema hover:text-dorado transition-colors py-2"
+              className="text-base font-semibold text-crema hover:text-dorado transition-colors py-2 border-b border-verde-oscuro/20"
             >
               Contacto
+            </a>
+            <a 
+              href="/en/" 
+              hrefLang="en"
+              lang="en"
+              className="text-base font-semibold text-dorado py-2"
+            >
+              English version
             </a>
 
             <a 
@@ -258,7 +277,7 @@ export default function App() {
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-75 will-change-transform"
           style={{ 
-            backgroundImage: `linear-gradient(to bottom, rgba(20, 20, 16, 0.45), rgba(20, 20, 16, 0.8)), url('/src/assets/images/hero_wood_cnc_1783808468440.jpg')`,
+            backgroundImage: `linear-gradient(to bottom, rgba(20, 20, 16, 0.45), rgba(20, 20, 16, 0.8)), url('${heroWoodCnc}')`,
             transform: `translate3d(0, ${parallaxOffset}px, 0)`,
           }}
         />
@@ -271,21 +290,27 @@ export default function App() {
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 mt-8">
           
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 bg-verde-oscuro/80 backdrop-blur border border-dorado/30 rounded-full px-4 py-1.5 mb-6 text-dorado hover:scale-102 transition-all">
+          <div className="inline-flex items-center gap-2 bg-verde-oscuro/80 backdrop-blur border border-dorado/30 rounded-full px-4 py-1.5 mb-4 text-dorado">
             <Sparkles className="w-3.5 h-3.5 text-dorado animate-spin-slow" />
             <span className="font-mono text-[10px] sm:text-xs tracking-widest uppercase font-medium">
-              LETREROS Y PIEZAS TALLADAS · SIERRA DESIGNS EC
+              {HERO_DATA.eyebrow}
             </span>
           </div>
 
+          {SEASONAL_BANNER.enabled && (
+            <p className="mb-6 text-sm font-semibold text-negro-profundo bg-dorado inline-block rounded-full px-4 py-1.5">
+              {SEASONAL_BANNER.text}
+            </p>
+          )}
+
           {/* Headline H1 */}
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-crema tracking-tight leading-tight mb-6">
-            Dale a tu bar, negocio o espacio esa <span className="text-transparent bg-clip-text bg-gradient-to-r from-dorado via-crema to-dorado">pieza única</span> que nadie más tiene.
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-crema tracking-tight leading-tight mb-6">
+            {HERO_DATA.title}
           </h1>
 
-          {/* Subtext */}
-          <p className="text-base sm:text-lg md:text-xl text-crema/85 max-w-2xl mx-auto leading-relaxed mb-10 font-normal">
-            Diseñamos y tallamos letreros personalizados en madera y PVC — tú apruebas el diseño antes de cortar, y lo recibes en tu domicilio en Quito, Cumbayá, Guayaquil o Cuenca en unos 5 días, envío incluido.
+          {/* Direct answer */}
+          <p className="text-base sm:text-lg text-crema/90 max-w-2xl mx-auto leading-relaxed mb-8 font-normal">
+            {HERO_DATA.answer}
           </p>
 
           {/* CTA Principal */}
@@ -297,31 +322,27 @@ export default function App() {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-dorado hover:bg-dorado-hover text-negro-profundo font-extrabold text-base px-8 py-4.5 rounded-full shadow-lg shadow-black/40 hover:scale-[1.03] active:scale-95 transition-all duration-300 animate-whatsapp-pulse cursor-pointer"
             >
               <MessageSquare className="w-5 h-5 fill-current" />
-              <span>Cotiza tu letrero por WhatsApp</span>
+              <span>Cotiza tu regalo por WhatsApp</span>
             </a>
             
             <a 
-              href="#letreros" 
+              href="#regalos" 
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-crema font-medium text-sm px-6 py-4.5 rounded-full border border-crema/20 transition-all duration-300 hover:scale-102 active:scale-95 backdrop-blur-sm"
             >
-              <span>Ver catálogo</span>
+              <span>Ver productos</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
 
-          {/* Core dynamic stats panel */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-8 border-t border-crema/15 max-w-3xl mx-auto">
-            {STATS.map((stat, i) => (
-              <div key={i} className="text-center p-2 rounded-xl hover:bg-white/5 transition-all duration-300">
-                <span className="font-display text-2xl sm:text-3xl font-black text-dorado block mb-1">
-                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                </span>
-                <span className="font-mono text-[9px] uppercase tracking-widest text-crema/80 font-medium block">
-                  {stat.label}
-                </span>
-              </div>
+          {/* Proof row */}
+          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-12 pt-8 border-t border-crema/15 max-w-3xl mx-auto">
+            {HERO_DATA.proof.map((item) => (
+              <li key={item} className="flex items-center justify-center gap-2 text-crema/90 text-xs sm:text-sm font-medium">
+                <CheckCircle className="w-4 h-4 text-dorado flex-shrink-0" />
+                <span>{item}</span>
+              </li>
             ))}
-          </div>
+          </ul>
 
         </div>
 
@@ -334,13 +355,120 @@ export default function App() {
         </div>
       </section>
 
+      {/* 4. SECCIÓN BANDEJAS DE MADERA (Fondo: --blanco para alternar ritmo) */}
+      <section id="regalos" className="py-20 px-4 sm:px-6 lg:px-8 bg-verde-suave w-full">
+        <div className="max-w-7xl mx-auto">
+          
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="font-mono text-xs font-bold uppercase tracking-widest text-verde-oscuro block mb-2">Regalos personalizados en madera</span>
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-verde-oscuro tracking-tight mb-4">Tablas y bandejas grabadas con tu diseño</h2>
+            <div className="w-16 h-1 bg-dorado mx-auto rounded-full mb-6" />
+            <p className="text-texto-oscuro text-sm sm:text-base leading-relaxed">
+              Tablas para picar y servir, y bandejas de madera para regalar o usar en casa. Grabamos nombres, fechas o frases con CNC, tú apruebas un render 3D antes de cortar, y las terminamos con aceites importados aptos para alimentos y cera de naranja.
+            </p>
+          </div>
+
+          {/* 3 Tarjetas Bandejas */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {BANDEJAS_CARDS.map((card) => (
+              <TiltCard key={card.id} className="group relative flex flex-col h-full bg-blanco border border-verde-suave rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300">
+                <div className="relative h-48 overflow-hidden bg-verde-oscuro">
+                  <img 
+                    src={card.image} 
+                    alt={`${card.title}: regalo personalizado en madera, Sierra Designs Riobamba`} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-verde-oscuro/80 via-transparent to-transparent opacity-60" />
+                  {card.badge && (
+                    <span className="absolute top-4 right-4 bg-verde-oscuro text-dorado text-[10px] font-mono uppercase tracking-wider font-extrabold px-3 py-1 rounded-full border border-dorado/20">
+                      {card.badge}
+                    </span>
+                  )}
+                </div>
+                <div className="p-6 flex-1 flex flex-col justify-between bg-blanco">
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-verde-oscuro mb-2 group-hover:text-dorado-hover transition-colors">
+                      {card.title}
+                    </h3>
+                    <p className="text-texto-oscuro text-xs sm:text-sm leading-relaxed mb-4">
+                      {card.description}
+                    </p>
+                  </div>
+                  <a
+                    href={card.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pt-2 flex items-center gap-1.5 text-verde-oscuro font-bold text-xs uppercase tracking-wider group-hover:text-dorado-hover transition-colors cursor-pointer"
+                  >
+                    <span>Cotizar este producto</span>
+                    <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1.5 transition-transform duration-300" />
+                  </a>
+                </div>
+              </TiltCard>
+            ))}
+          </div>
+
+          {/* Trabajos Personalizados "Hazlo tuyo" (Fondo Diferenciado: --verde-oscuro, Texto: --crema, Ícono/acento: --dorado) */}
+          <div className="bg-verde-oscuro text-crema rounded-2xl border border-dorado/20 p-6 md:p-8 max-w-4xl mx-auto mb-16 relative overflow-hidden shadow-xl">
+            {/* Background pattern */}
+            <div className="absolute -left-12 -top-12 w-48 h-48 bg-verde-oscuro/50 rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
+              <div className="bg-dorado/20 text-dorado p-4 rounded-full border border-dorado/30 flex-shrink-0">
+                <Sparkles className="w-8 h-8 animate-pulse-slow text-dorado" />
+              </div>
+              <div>
+                <h3 className="font-display text-lg md:text-xl font-bold text-dorado mb-2 flex items-center gap-2">
+                  <span>Trabajos Personalizados</span>
+                  <span className="bg-dorado text-negro-profundo font-mono text-[9px] font-black uppercase px-2 py-0.5 rounded">Hazlo Tuyo</span>
+                </h3>
+                <p className="text-crema/90 text-xs sm:text-sm leading-relaxed">
+                  Además del diseño base, podemos grabar lo que tú quieras: el escudo de tu equipo, una marca vintage, o hasta una <span className="text-white font-semibold underline decoration-dorado underline-offset-4">caricatura hecha con IA</span> a partir de una foto — perfecta para regalarle a papá, a tu pareja o a un amigo. Cuéntanos tu idea por WhatsApp y la hacemos realidad.
+                </p>
+                <p className="text-crema/60 text-[10px] mt-2 italic font-mono">
+                  * Nota: Los grabados de marcas son de carácter privado bajo encargo y no forman parte del catálogo comercial público.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bandejas Carrusel */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <h4 className="font-display font-bold text-verde-oscuro text-center text-sm uppercase tracking-widest mb-6 flex items-center justify-center gap-2">
+              <span className="w-6 h-[1px] bg-verde-oscuro/20" />
+              Referencias de nuestro trabajo
+              <span className="w-6 h-[1px] bg-verde-oscuro/20" />
+            </h4>
+            <Carousel items={BANDEJAS_CAROUSEL} id="bandejas-carousel" />
+            <p className="text-center text-xs text-texto-oscuro/60 mt-4">Imágenes de referencia. Muy pronto: fotos de tus piezas terminadas.</p>
+          </div>
+
+          {/* CTA Bandejas */}
+          <div className="text-center">
+            <a 
+              href="https://wa.me/593960053637?text=Hola!%20Quiero%20personalizar%20una%20tabla%20o%20bandeja%20de%20madera"
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 bg-dorado hover:bg-dorado-hover text-negro-profundo font-bold text-sm px-7 py-4 rounded-full transition-all duration-300 hover:scale-102 active:scale-95 shadow cursor-pointer animate-whatsapp-pulse"
+            >
+              <MessageSquare className="w-4.5 h-4.5 fill-current" />
+              <span>Personaliza tu regalo → Cotiza por WhatsApp</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
       {/* 3. SECCIÓN LETREROS TALLADOS (Fondo: --verde-suave para ritmo) */}
-      <section id="letreros" className="py-20 px-4 sm:px-6 lg:px-8 bg-verde-suave w-full">
+      <section id="letreros" className="bg-blanco py-20 px-4 sm:px-6 lg:px-8 border-y border-verde-suave">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="font-mono text-xs font-extrabold uppercase tracking-widest text-verde-oscuro block mb-2">Nuestro producto insignia</span>
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-verde-oscuro tracking-tight mb-4">Letreros que le dan carácter a tu espacio</h2>
+            <span className="font-mono text-xs font-extrabold uppercase tracking-widest text-verde-oscuro block mb-2">También hacemos</span>
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-verde-oscuro tracking-tight mb-4">Letreros tallados para bares, negocios y espacios</h2>
             <div className="w-16 h-1 bg-dorado mx-auto rounded-full mb-6" />
             <p className="text-texto-oscuro text-sm sm:text-base leading-relaxed">
               Diseñamos y tallamos letreros en madera y PVC, pensados para bares, negocios y espacios personales que quieren destacar. Tú eliges el diseño, lo apruebas antes de cortar, y lo tallamos con precisión CNC — cada línea exactamente como la imaginaste.
@@ -354,7 +482,7 @@ export default function App() {
                 <div className="relative h-48 overflow-hidden bg-verde-oscuro">
                   <img 
                     src={card.image} 
-                    alt={`${card.title} - taller CNC letreros personalizados Ecuador`} 
+                    alt={`${card.title}: letrero tallado personalizado, Sierra Designs Riobamba`} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                     loading="lazy"
@@ -402,7 +530,7 @@ export default function App() {
                 Cada letrero pasa por un boceto digital que apruebas antes de tocar la máquina — así no hay sorpresas. Recíbelo en tu domicilio en <span className="font-bold text-dorado">Quito, Cumbayá, Guayaquil o Cuenca</span> en unos 5 días, envío incluido.
               </p>
               <a 
-                href="https://wa.me/593987654321?text=Hola!%20Me%20gustaria%20disenar%20y%20cotizar%20un%20letrero%20tallado"
+                href="https://wa.me/593960053637?text=Hola!%20Me%20gustaria%20disenar%20y%20cotizar%20un%20letrero%20tallado"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-dorado hover:bg-dorado-hover text-negro-profundo font-bold text-sm px-6 py-3.5 rounded-full transition-all duration-300 hover:scale-102 active:scale-95 shadow cursor-pointer"
@@ -412,107 +540,6 @@ export default function App() {
               </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* 4. SECCIÓN BANDEJAS DE MADERA (Fondo: --blanco para alternar ritmo) */}
-      <section id="bandejas" className="bg-blanco py-20 px-4 sm:px-6 lg:px-8 border-y border-verde-suave">
-        <div className="max-w-7xl mx-auto">
-          
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-verde-oscuro block mb-2">Tu segunda prioridad, la primera en detalle</span>
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-verde-oscuro tracking-tight mb-4">Bandejas de madera con tu sello personal</h2>
-            <div className="w-16 h-1 bg-dorado mx-auto rounded-full mb-6" />
-            <p className="text-texto-oscuro text-sm sm:text-base leading-relaxed">
-              Bandejas talladas en madera, pensadas para servir, decorar o regalar. Grabamos nombres, fechas o frases que convierten un objeto cotidiano en algo memorable — tú eliges el diseño, lo apruebas antes de cortar, y la hacemos con precisión CNC.
-            </p>
-          </div>
-
-          {/* 3 Tarjetas Bandejas */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {BANDEJAS_CARDS.map((card) => (
-              <TiltCard key={card.id} className="group relative flex flex-col h-full bg-blanco border border-verde-suave rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300">
-                <div className="relative h-48 overflow-hidden bg-verde-oscuro">
-                  <img 
-                    src={card.image} 
-                    alt={`${card.title} - bandejas personalizadas Ecuador`} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-verde-oscuro/80 via-transparent to-transparent opacity-60" />
-                  {card.badge && (
-                    <span className="absolute top-4 right-4 bg-verde-oscuro text-dorado text-[10px] font-mono uppercase tracking-wider font-extrabold px-3 py-1 rounded-full border border-dorado/20">
-                      {card.badge}
-                    </span>
-                  )}
-                </div>
-                <div className="p-6 flex-1 flex flex-col justify-between bg-blanco">
-                  <div>
-                    <h3 className="font-display text-lg font-bold text-verde-oscuro mb-2 group-hover:text-dorado-hover transition-colors">
-                      {card.title}
-                    </h3>
-                    <p className="text-texto-oscuro text-xs sm:text-sm leading-relaxed mb-4">
-                      {card.description}
-                    </p>
-                  </div>
-                  <div className="pt-2 flex items-center gap-1.5 text-verde-oscuro font-bold text-xs uppercase tracking-wider group-hover:text-dorado-hover transition-colors">
-                    <span>Ver detalles</span>
-                    <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1.5 transition-transform duration-300" />
-                  </div>
-                </div>
-              </TiltCard>
-            ))}
-          </div>
-
-          {/* Trabajos Personalizados "Hazlo tuyo" (Fondo Diferenciado: --verde-oscuro, Texto: --crema, Ícono/acento: --dorado) */}
-          <div className="bg-verde-oscuro text-crema rounded-2xl border border-dorado/20 p-6 md:p-8 max-w-4xl mx-auto mb-16 relative overflow-hidden shadow-xl">
-            {/* Background pattern */}
-            <div className="absolute -left-12 -top-12 w-48 h-48 bg-verde-oscuro/50 rounded-full blur-3xl pointer-events-none" />
-            
-            <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
-              <div className="bg-dorado/20 text-dorado p-4 rounded-full border border-dorado/30 flex-shrink-0">
-                <Sparkles className="w-8 h-8 animate-pulse-slow text-dorado" />
-              </div>
-              <div>
-                <h3 className="font-display text-lg md:text-xl font-bold text-dorado mb-2 flex items-center gap-2">
-                  <span>Trabajos Personalizados</span>
-                  <span className="bg-dorado text-negro-profundo font-mono text-[9px] font-black uppercase px-2 py-0.5 rounded">Hazlo Tuyo</span>
-                </h3>
-                <p className="text-crema/90 text-xs sm:text-sm leading-relaxed">
-                  Además del diseño base, podemos grabar lo que tú quieras: el escudo de tu equipo, una marca vintage, o hasta una <span className="text-white font-semibold underline decoration-dorado underline-offset-4">caricatura hecha con IA</span> a partir de una foto — perfecta para regalarle a papá, a tu pareja o a un amigo. Cuéntanos tu idea por WhatsApp y la hacemos realidad.
-                </p>
-                <p className="text-crema/60 text-[10px] mt-2 italic font-mono">
-                  * Nota: Los grabados de marcas son de carácter privado bajo encargo y no forman parte del catálogo comercial público.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Bandejas Carrusel */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <h4 className="font-display font-bold text-verde-oscuro text-center text-sm uppercase tracking-widest mb-6 flex items-center justify-center gap-2">
-              <span className="w-6 h-[1px] bg-verde-oscuro/20" />
-              Bandejas Recientemente Talladas
-              <span className="w-6 h-[1px] bg-verde-oscuro/20" />
-            </h4>
-            <Carousel items={BANDEJAS_CAROUSEL} id="bandejas-carousel" />
-          </div>
-
-          {/* CTA Bandejas */}
-          <div className="text-center">
-            <a 
-              href="https://wa.me/593987654321?text=Hola!%20Me%20gustaria%20personalizar%20una%20bandeja%20de%20madera"
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-dorado hover:bg-dorado-hover text-negro-profundo font-bold text-sm px-7 py-4 rounded-full transition-all duration-300 hover:scale-102 active:scale-95 shadow cursor-pointer animate-whatsapp-pulse"
-            >
-              <MessageSquare className="w-4.5 h-4.5 fill-current" />
-              <span>Personaliza tu bandeja → Cotiza por WhatsApp</span>
-            </a>
-          </div>
-
         </div>
       </section>
 
@@ -692,6 +719,28 @@ export default function App() {
         </div>
       </section>
 
+      {/* FAQ (details/summary: all answers stay in the HTML for crawlers; text comes from copy.es.json, same as the FAQPage schema) */}
+      <section id="preguntas" className="bg-blanco py-20 px-4 sm:px-6 lg:px-8 border-t border-verde-suave">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="font-mono text-xs font-bold uppercase tracking-widest text-verde-oscuro block mb-2">Preguntas frecuentes</span>
+            <h2 className="font-display text-3xl font-extrabold text-verde-oscuro tracking-tight mb-4">Lo que casi todos nos preguntan</h2>
+            <div className="w-16 h-1 bg-dorado mx-auto rounded-full" />
+          </div>
+          <div className="space-y-3">
+            {FAQ_ITEMS.map((item) => (
+              <details key={item.q} className="group bg-verde-suave/60 border border-verde-suave rounded-xl px-5 py-4">
+                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-display font-bold text-verde-oscuro text-sm sm:text-base">
+                  <h3 className="font-display font-bold text-sm sm:text-base">{item.q}</h3>
+                  <ChevronDown className="w-4 h-4 flex-shrink-0 transition-transform group-open:rotate-180" />
+                </summary>
+                <p className="mt-3 text-texto-oscuro text-sm leading-relaxed">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 8. FOOTER / CONTACTO - Fondo: --negro-profundo */}
       <footer id="contacto" className="bg-negro-profundo text-crema mt-auto pt-16 pb-8 px-4 border-t border-verde-oscuro/30">
         <div className="max-w-7xl mx-auto">
@@ -711,13 +760,13 @@ export default function App() {
               </div>
 
               <p className="text-crema/80 text-xs sm:text-sm leading-relaxed max-w-sm">
-                Diseñamos y tallamos letreros y bandejas de madera/PVC que le dan vida a tus ideas. Creamos bocetos digitales interactivos y enviamos con total seguridad a todo el Ecuador en unos 5 días hábiles.
+                Tablas, bandejas y regalos personalizados en madera, grabados con CNC en Riobamba. Te enviamos un render 3D antes de cortar y enviamos con garantía a todo el Ecuador.
               </p>
               
               <div className="space-y-2 pt-2">
                 <div className="flex items-center gap-2.5 text-xs text-crema/90">
                   <MapPin className="w-4.5 h-4.5 text-dorado flex-shrink-0" />
-                  <span>Taller Matriz: Riobamba, Provincia de Chimborazo, Ecuador</span>
+                  <span>Taller: {SITE_ADDRESS}</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs text-crema/90">
                   <Truck className="w-4.5 h-4.5 text-dorado flex-shrink-0" />
@@ -772,16 +821,22 @@ export default function App() {
           {/* Socials & Bottom Bar */}
           <div className="border-t border-verde-oscuro/40 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-crema/60 text-xs">
             <div>
-              <p>© {new Date().getFullYear()} SIERRA DESIGNS EC. Todos los derechos reservados.</p>
+              <p>© {new Date().getFullYear()} Sierra Designs. Todos los derechos reservados.</p>
               <p className="text-[10px] text-crema/40 mt-1">Precio final, sin sorpresas — envío incluido a nivel nacional.</p>
             </div>
             
             <div className="flex items-center space-x-4">
-              <a href="#" className="p-2 bg-negro-profundo border border-dorado/15 rounded-lg hover:text-dorado hover:border-dorado transition-colors" aria-label="Síguenos en Instagram">
+              <a href="https://www.instagram.com/sierra_designsec/" target="_blank" rel="noopener noreferrer" className="p-2 bg-negro-profundo border border-dorado/15 rounded-lg hover:text-dorado hover:border-dorado transition-colors" aria-label="Síguenos en Instagram">
                 <Instagram className="w-4 h-4 text-crema/80 hover:text-dorado" />
               </a>
-              <a href="#" className="p-2 bg-negro-profundo border border-dorado/15 rounded-lg hover:text-dorado hover:border-dorado transition-colors" aria-label="Síguenos en Facebook">
+              <a href="https://www.facebook.com/CNC3dEC" target="_blank" rel="noopener noreferrer" className="p-2 bg-negro-profundo border border-dorado/15 rounded-lg hover:text-dorado hover:border-dorado transition-colors" aria-label="Síguenos en Facebook">
                 <Facebook className="w-4 h-4 text-crema/80 hover:text-dorado" />
+              </a>
+              <a href="/en/" hrefLang="en" lang="en" className="px-2.5 py-2 bg-negro-profundo border border-dorado/15 rounded-lg hover:text-dorado hover:border-dorado transition-colors text-[10px] font-bold uppercase tracking-wider text-crema/80">
+                English
+              </a>
+              <a href="https://www.tiktok.com/@sierra.designs" target="_blank" rel="noopener noreferrer" className="px-2.5 py-2 bg-negro-profundo border border-dorado/15 rounded-lg hover:text-dorado hover:border-dorado transition-colors text-[10px] font-bold uppercase tracking-wider text-crema/80" aria-label="Síguenos en TikTok">
+                TikTok
               </a>
             </div>
           </div>

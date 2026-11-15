@@ -4,6 +4,7 @@ export interface ProductCard {
   description: string;
   badge?: string;
   image?: string;
+  whatsapp?: string;
 }
 
 export interface CarouselItem {
