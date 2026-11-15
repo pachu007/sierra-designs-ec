@@ -31,6 +31,8 @@ export const GUARANTEE = {
 };
 
 export const DISCOUNT = {
+  image: photo('siete17-stack'),
+  alt: 'Pila de tablas de madera sólida con el logotipo de un restobar grabado, un pedido de varias piezas',
   text: copy.discount.text,
   link: waLink(copy.discount.whatsappText)
 };
@@ -132,7 +134,7 @@ export const LETREROS_CAROUSEL: CarouselItem[] = [
   }
 ];
 
-const PRODUCT_IMAGES = [photo('cangrejal-board'), photo('anchor'), photo('jd-cap-card')];
+const PRODUCT_IMAGES = [photo('siete17-board-card'), photo('siete17-tray-card'), photo('jd-cap-card')];
 
 export const BANDEJAS_CARDS: ProductCard[] = copy.products.map((p, i) => ({
   id: `b${i + 1}`,
@@ -147,31 +149,45 @@ export const BANDEJAS_CARDS: ProductCard[] = copy.products.map((p, i) => ({
 export const BANDEJAS_CAROUSEL: CarouselItem[] = [
   {
     id: "bc1",
+    src: photo('siete17-stack'),
+    alt: "Pila de tablas de madera sólida con el logotipo de un restobar grabado, hechas en el taller de Sierra Designs",
+    title: "Pedido de varias piezas",
+    description: "Tablas de madera sólida grabadas con el logotipo de un restobar. Desde 5 piezas hay precio especial."
+  },
+  {
+    id: "bc2",
+    src: photo('siete17-board'),
+    alt: "Tabla de madera sólida con mango y logotipo grabado, lista para entregar sobre papel de seda",
+    title: "Tabla con mango",
+    description: "Madera sólida con el logotipo grabado y acabado con aceites importados."
+  },
+  {
+    id: "bc3",
+    src: photo('siete17-tray-a'),
+    alt: "Bandeja de madera sólida con asas de madera y logotipo grabado en el centro",
+    title: "Bandeja con asas",
+    description: "Bandeja de madera con asas y grabado en el centro, para servir en mesa."
+  },
+  {
+    id: "bc4",
+    src: photo('siete17-logo'),
+    alt: "Detalle del grabado CNC de un logotipo sobre la veta de la madera",
+    title: "El grabado de cerca",
+    description: "Letras nítidas grabadas sobre la veta, con el acabado oscuro que resalta el diseño."
+  },
+  {
+    id: "bc5",
     src: photo('cangrejal-board'),
     alt: "Tabla de madera ovalada con canal y relieve pintado, hecha por Sierra Designs en Riobamba",
     title: "Tabla ovalada con relieve",
     description: "Tabla de madera con canal y diseño en relieve pintado a mano."
   },
   {
-    id: "bc2",
+    id: "bc6",
     src: photo('anchor-card'),
     alt: "Pieza tallada terminada junto a la tarjeta de agradecimiento de Sierra Designs",
     title: "Pieza terminada",
     description: "Tallada con CNC, acabada a mano y entregada con la tarjeta del taller."
-  },
-  {
-    id: "bc3",
-    src: photo('blank-scallop'),
-    alt: "Tabla de madera sólida con borde ondulado recién cortada por la fresa CNC en el taller",
-    title: "Madera sólida, recién cortada",
-    description: "Así sale una tabla de la máquina antes de lijar y aplicar aceite."
-  },
-  {
-    id: "bc4",
-    src: photo('jd-guitar'),
-    alt: "Placa de madera grabada con diseño vintage y guitarra, hecha con CNC",
-    title: "Grabado en madera",
-    description: "Líneas finas grabadas y acabado oscuro que resalta la veta."
   }
 ];
 

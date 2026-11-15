@@ -455,7 +455,9 @@ export default function App() {
           </div>
 
           {/* Descuento por cantidad */}
-          <div className="max-w-3xl mx-auto mb-12 bg-dorado/15 border border-dorado/40 rounded-2xl p-5 text-center">
+          <div className="max-w-3xl mx-auto mb-12 bg-dorado/15 border border-dorado/40 rounded-2xl overflow-hidden text-center">
+            <img src={DISCOUNT.image} alt={DISCOUNT.alt} className="w-full h-44 sm:h-56 object-cover" loading="lazy" />
+            <div className="p-5">
             <p className="text-verde-oscuro font-semibold text-sm sm:text-base mb-3">{DISCOUNT.text}</p>
             <a
               href={DISCOUNT.link}
@@ -466,6 +468,7 @@ export default function App() {
               <MessageSquare className="w-4 h-4 fill-current" />
               <span>Cotizar 5 o más piezas</span>
             </a>
+            </div>
           </div>
 
           {/* Trabajos Personalizados "Hazlo tuyo" (Fondo Diferenciado: --verde-oscuro, Texto: --crema, Ícono/acento: --dorado) */}
