@@ -34,8 +34,12 @@ function seoCopy(): Plugin {
         `<h1>${esc(copy.hero.h1)}</h1>` +
         `<p>${esc(copy.hero.answer)}</p>` +
         `<ul>${copy.hero.proof.map((p: string) => `<li>${esc(p)}</li>`).join('')}</ul>` +
-        '<h2>Qué hacemos</h2>' +
-        `<ul>${copy.products.map((p: {title: string; description: string}) => `<li><strong>${esc(p.title)}:</strong> ${esc(p.description)}</li>`).join('')}</ul>` +
+        `<h2>${esc(copy.guarantee.eyebrow)}: ${esc(copy.guarantee.headline)}</h2>` +
+        `<p>${esc(copy.guarantee.problem)} ${esc(copy.guarantee.body)}</p>` +
+        '<h2>Qué hacemos y precios</h2>' +
+        `<ul>${copy.products.map((p: {title: string; price: string; description: string}) => `<li><strong>${esc(p.title)} (${esc(p.price)}):</strong> ${esc(p.description)}</li>`).join('')}</ul>` +
+        `<p>${esc(copy.discount.text)}</p>` +
+        `<p>${esc(copy.shippingNote)}</p>` +
         '<h2>Preguntas frecuentes</h2>' +
         copy.faq.map((f: {q: string; a: string}) => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join('') +
         '<h2>Contacto</h2>' +

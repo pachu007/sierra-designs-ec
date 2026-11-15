@@ -29,7 +29,11 @@ import {
   CIUDADES_COBERTURA, 
   SEASONAL_BANNER,
   FAQ_ITEMS,
-  SITE_ADDRESS
+  SITE_ADDRESS,
+  GUARANTEE,
+  DISCOUNT,
+  SHIPPING_NOTE,
+  PROCESS_PHOTOS
 } from './data';
 
 import TiltCard from './components/TiltCard';
@@ -355,6 +359,42 @@ export default function App() {
         </div>
       </section>
 
+      {/* GARANTÍA DE RENDER 3D: prueba visual (render aprobado vs pieza real) */}
+      <section id="garantia" className="bg-verde-oscuro text-crema py-16 px-4 sm:px-6 lg:px-8 border-b border-dorado/20">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="font-mono text-xs font-bold uppercase tracking-widest text-dorado block mb-2">{GUARANTEE.eyebrow}</span>
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-crema tracking-tight mb-4">{GUARANTEE.headline}</h2>
+            <div className="w-16 h-1 bg-dorado mx-auto rounded-full mb-5" />
+            <p className="text-crema/90 text-sm sm:text-base font-semibold mb-2">{GUARANTEE.problem}</p>
+            <p className="text-crema/80 text-sm sm:text-base leading-relaxed">{GUARANTEE.body}</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+            <figure className="bg-negro-profundo/40 rounded-2xl overflow-hidden border border-dorado/20">
+              <img src={GUARANTEE.renderImage} alt={GUARANTEE.renderAlt} className="w-full h-64 sm:h-80 object-cover" loading="lazy" />
+              <figcaption className="px-4 py-3 text-xs font-mono uppercase tracking-wider text-dorado">1 · {GUARANTEE.renderCaption}</figcaption>
+            </figure>
+            <figure className="bg-negro-profundo/40 rounded-2xl overflow-hidden border border-dorado/20">
+              <img src={GUARANTEE.realImage} alt={GUARANTEE.realAlt} className="w-full h-64 sm:h-80 object-cover" loading="lazy" />
+              <figcaption className="px-4 py-3 text-xs font-mono uppercase tracking-wider text-dorado">2 · {GUARANTEE.realCaption}</figcaption>
+            </figure>
+          </div>
+
+          <div className="text-center">
+            <a
+              href={GUARANTEE.cta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 bg-dorado hover:bg-dorado-hover text-negro-profundo font-bold text-sm px-7 py-4 rounded-full transition-all duration-300 hover:scale-102 active:scale-95 shadow cursor-pointer"
+            >
+              <MessageSquare className="w-4 h-4 fill-current" />
+              <span>Quiero ver mi render 3D → WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* 4. SECCIÓN BANDEJAS DE MADERA (Fondo: --blanco para alternar ritmo) */}
       <section id="regalos" className="py-20 px-4 sm:px-6 lg:px-8 bg-verde-suave w-full">
         <div className="max-w-7xl mx-auto">
@@ -390,9 +430,12 @@ export default function App() {
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between bg-blanco">
                   <div>
-                    <h3 className="font-display text-lg font-bold text-verde-oscuro mb-2 group-hover:text-dorado-hover transition-colors">
+                    <h3 className="font-display text-lg font-bold text-verde-oscuro mb-1 group-hover:text-dorado-hover transition-colors">
                       {card.title}
                     </h3>
+                    {card.price && (
+                      <p className="font-display text-xl font-extrabold text-verde-oscuro mb-2">{card.price}</p>
+                    )}
                     <p className="text-texto-oscuro text-xs sm:text-sm leading-relaxed mb-4">
                       {card.description}
                     </p>
@@ -409,6 +452,20 @@ export default function App() {
                 </div>
               </TiltCard>
             ))}
+          </div>
+
+          {/* Descuento por cantidad */}
+          <div className="max-w-3xl mx-auto mb-12 bg-dorado/15 border border-dorado/40 rounded-2xl p-5 text-center">
+            <p className="text-verde-oscuro font-semibold text-sm sm:text-base mb-3">{DISCOUNT.text}</p>
+            <a
+              href={DISCOUNT.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-verde-oscuro hover:bg-negro-profundo text-dorado font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-full transition-colors cursor-pointer"
+            >
+              <MessageSquare className="w-4 h-4 fill-current" />
+              <span>Cotizar 5 o más piezas</span>
+            </a>
           </div>
 
           {/* Trabajos Personalizados "Hazlo tuyo" (Fondo Diferenciado: --verde-oscuro, Texto: --crema, Ícono/acento: --dorado) */}
@@ -439,11 +496,11 @@ export default function App() {
           <div className="max-w-4xl mx-auto mb-16">
             <h4 className="font-display font-bold text-verde-oscuro text-center text-sm uppercase tracking-widest mb-6 flex items-center justify-center gap-2">
               <span className="w-6 h-[1px] bg-verde-oscuro/20" />
-              Referencias de nuestro trabajo
+              Trabajos hechos en nuestro taller
               <span className="w-6 h-[1px] bg-verde-oscuro/20" />
             </h4>
             <Carousel items={BANDEJAS_CAROUSEL} id="bandejas-carousel" />
-            <p className="text-center text-xs text-texto-oscuro/60 mt-4">Imágenes de referencia. Muy pronto: fotos de tus piezas terminadas.</p>
+            <p className="text-center text-xs text-texto-oscuro/60 mt-4">Trabajos reales hechos en nuestro taller de Riobamba.</p>
           </div>
 
           {/* CTA Bandejas */}
@@ -527,7 +584,7 @@ export default function App() {
             <div className="absolute -right-16 -bottom-16 w-36 h-36 bg-verde-oscuro/30 rounded-full blur-2xl pointer-events-none" />
             <div className="relative z-10">
               <p className="text-crema text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-medium leading-relaxed mb-6">
-                Cada letrero pasa por un boceto digital que apruebas antes de tocar la máquina — así no hay sorpresas. Recíbelo en tu domicilio en <span className="font-bold text-dorado">Quito, Cumbayá, Guayaquil o Cuenca</span> en unos 5 días, envío incluido.
+                Cada letrero pasa por un boceto digital que apruebas antes de tocar la máquina — así no hay sorpresas. Recíbelo en tu domicilio en <span className="font-bold text-dorado">Quito, Cumbayá, Guayaquil o Cuenca</span> en unos 5 días, con envío garantizado (el costo depende del destino).
               </p>
               <a 
                 href="https://wa.me/593960053637?text=Hola!%20Me%20gustaria%20disenar%20y%20cotizar%20un%20letrero%20tallado"
@@ -559,6 +616,7 @@ export default function App() {
               <p className="text-texto-oscuro text-sm sm:text-base leading-relaxed">
                 Fabricamos cada pieza a mano en nuestro taller en Riobamba y la enviamos directo a tu puerta en <span className="font-bold text-verde-oscuro">Quito, Cumbayá, Guayaquil, Cuenca</span> y el resto del país vía <span className="text-verde-oscuro underline decoration-dorado font-semibold">Servientrega o Tramaco Express</span>. Desde que confirmas tu diseño hasta que la recibes en casa: aproximadamente 5 días laborables.
               </p>
+              <p className="mt-3 text-verde-oscuro text-sm font-semibold">{SHIPPING_NOTE}</p>
             </div>
 
             {/* Timeline interactiva */}
@@ -702,6 +760,19 @@ export default function App() {
             ))}
           </div>
 
+          {/* Así se hace: fotos reales del proceso */}
+          <div className="mb-16">
+            <h3 className="font-display font-bold text-verde-oscuro text-center text-sm uppercase tracking-widest mb-6">Así se hace, en nuestro taller</h3>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {PROCESS_PHOTOS.map((ph) => (
+                <figure key={ph.src} className="rounded-2xl overflow-hidden border border-verde-suave bg-blanco shadow-sm">
+                  <img src={ph.src} alt={ph.alt} className="w-full h-44 sm:h-56 object-cover" loading="lazy" />
+                  <figcaption className="px-3 py-2 text-xs text-texto-oscuro font-medium">{ph.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+
           {/* Mención CNC destacada - Fondo: --verde-oscuro, acento: --dorado */}
           <div className="bg-verde-oscuro text-crema rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden shadow-lg border border-dorado/10">
             <div className="absolute right-0 top-0 w-64 h-64 bg-radial-gradient from-verde-oscuro/20 to-transparent pointer-events-none" />
@@ -748,6 +819,25 @@ export default function App() {
         </div>
       </section>
 
+      {/* CTA FINAL: éxito vs. riesgo */}
+      <section className="bg-verde-oscuro text-crema py-16 px-4 sm:px-6 lg:px-8 border-t border-dorado/20">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-crema tracking-tight mb-4">Regala algo que se queda en la casa, no otro regalo olvidable</h2>
+          <p className="text-crema/85 text-sm sm:text-base leading-relaxed mb-6">
+            Cuéntanos qué quieres grabar. Te respondemos por WhatsApp con el precio, el costo de envío a tu ciudad y un render 3D para que lo apruebes antes de cortar.
+          </p>
+          <a
+            href={HERO_DATA.ctaWhatsApp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 bg-dorado hover:bg-dorado-hover text-negro-profundo font-extrabold text-base px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer"
+          >
+            <MessageSquare className="w-5 h-5 fill-current" />
+            <span>Cotiza tu regalo por WhatsApp</span>
+          </a>
+        </div>
+      </section>
+
       {/* 8. FOOTER / CONTACTO - Fondo: --negro-profundo */}
       <footer id="contacto" className="bg-negro-profundo text-crema mt-auto pt-16 pb-8 px-4 border-t border-verde-oscuro/30">
         <div className="max-w-7xl mx-auto">
@@ -767,7 +857,7 @@ export default function App() {
               </div>
 
               <p className="text-crema/80 text-xs sm:text-sm leading-relaxed max-w-sm">
-                Tablas, bandejas y regalos personalizados en madera, grabados con CNC en Riobamba. Te enviamos un render 3D antes de cortar y enviamos con garantía a todo el Ecuador.
+                Tablas, bandejas y regalos personalizados en madera, grabados con CNC en Riobamba. Recibes exactamente lo que apruebas en el render 3D, y enviamos con garantía a todo el Ecuador.
               </p>
               
               <div className="space-y-2 pt-2">
@@ -786,7 +876,7 @@ export default function App() {
             <div className="lg:col-span-4 space-y-4">
               <h3 className="font-display text-sm font-bold uppercase tracking-widest text-dorado">Ciudades de Cobertura</h3>
               <p className="text-crema/80 text-xs leading-relaxed mb-2">
-                Entregas rápidas con envío incluido a las principales zonas y ciudades del Ecuador:
+                Envío garantizado, con costo según el destino, a las principales ciudades del Ecuador:
               </p>
               <div className="flex flex-wrap gap-1.5 max-w-md">
                 {CIUDADES_COBERTURA.map((ciudad) => (
@@ -829,7 +919,7 @@ export default function App() {
           <div className="border-t border-verde-oscuro/40 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-crema/60 text-xs">
             <div>
               <p>© {new Date().getFullYear()} Sierra Designs. Todos los derechos reservados.</p>
-              <p className="text-[10px] text-crema/40 mt-1">Precio final, sin sorpresas — envío incluido a nivel nacional.</p>
+              <p className="text-[10px] text-crema/40 mt-1">Precio final confirmado antes de pagar. Envío garantizado, costo según destino.</p>
             </div>
             
             <div className="flex items-center space-x-4">

@@ -5,6 +5,7 @@ export interface ProductCard {
   badge?: string;
   image?: string;
   whatsapp?: string;
+  price?: string;
 }
 
 export interface CarouselItem {

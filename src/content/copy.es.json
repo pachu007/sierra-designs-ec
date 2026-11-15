@@ -1,39 +1,63 @@
 {
   "title": "Regalos Personalizados en Madera y Tablas para Servir | Riobamba, Ecuador",
-  "description": "Tablas para picar, bandejas y regalos personalizados en madera, grabados con CNC en Riobamba. Render 3D antes de cortar. Envío garantizado a todo Ecuador.",
+  "description": "Tablas para picar desde $7, bandejas desde $15 y letreros vintage desde $30. Grabado CNC en Riobamba, render 3D antes de cortar y envío garantizado a todo Ecuador.",
   "ogTitle": "Regalos Personalizados en Madera | Sierra Designs, Riobamba",
-  "ogDescription": "Tablas, bandejas y piezas talladas con tu nombre o diseño. Render 3D antes de cortar y envío garantizado a todo Ecuador.",
+  "ogDescription": "Tablas, bandejas y letreros con tu nombre o diseño. Aprueba un render 3D antes de cortar y recibe exactamente lo que apruebas. Envío garantizado a todo Ecuador.",
   "address": "Av. Antonio José de Sucre, vía a Guano (pasando el Mall El Paseo Shopping), Riobamba, Chimborazo",
   "hero": {
     "h1": "Regalos personalizados en madera: tablas para picar y bandejas grabadas con tu diseño",
-    "answer": "Hacemos tablas para servir, bandejas y piezas talladas en madera con nombres, fechas o diseños vintage, grabadas con CNC en Riobamba. Ves un render 3D antes de cortar, las terminamos con aceites importados aptos para alimentos y cera de naranja, y las enviamos a todo Ecuador.",
+    "answer": "Tú eliges el nombre, la fecha o el diseño; nosotros lo grabamos con CNC en Riobamba. Antes de cortar ves un render 3D y lo apruebas: recibes exactamente lo que apruebas. Enviamos a todo Ecuador.",
     "proof": [
-      "Render 3D antes de cortar",
-      "Aceites importados y cera de naranja",
+      "Garantía de render 3D: recibes exactamente lo que apruebas",
+      "Aceites importados aptos para alimentos y cera de naranja",
       "Envío garantizado a todo Ecuador"
     ]
   },
+  "guarantee": {
+    "eyebrow": "Garantía de render 3D",
+    "headline": "Recibes exactamente lo que apruebas.",
+    "problem": "¿Te preocupa que un regalo personalizado llegue distinto a lo que imaginaste?",
+    "body": "Antes de cortar te enviamos un render 3D de tu pieza. Tú lo apruebas, y solo entonces encendemos la máquina CNC. Mira la diferencia: a la izquierda el render que aprobó el cliente, a la derecha la pieza terminada.",
+    "renderCaption": "Render 3D enviado para aprobar",
+    "realCaption": "La pieza terminada en madera"
+  },
   "products": [
     {
-      "title": "Tabla grabada con nombre",
+      "title": "Tabla para picar grabada con nombre",
+      "price": "Desde $7",
       "description": "Tabla para picar y servir en madera sólida con nombre, fecha o frase grabada. Regalo para bodas, aniversarios y estrenos de casa.",
       "badge": "Regalo estrella",
-      "whatsappText": "Hola! Quiero cotizar una tabla grabada con nombre"
+      "whatsappText": "Hola! Quiero cotizar una tabla para picar grabada con nombre"
     },
     {
-      "title": "Bandeja para servir",
-      "description": "Bandeja de madera pequeña o mediana, con asas, para desayunos, aperitivos o decoración. Con tu nombre o diseño grabado.",
+      "title": "Bandeja decorativa",
+      "price": "Desde $15",
+      "description": "Bandeja de madera pequeña o mediana, con relieve o grabado, para decorar la mesa o regalar. Con tu nombre o diseño.",
       "badge": "Para la mesa",
-      "whatsappText": "Hola! Quiero cotizar una bandeja de madera para servir"
+      "whatsappText": "Hola! Quiero cotizar una bandeja decorativa de madera"
     },
     {
-      "title": "Tabla tallada vintage",
-      "description": "Relieve inspirado en letreros y tapas de botella de antes. Para bares en casa, cocinas y regalos con carácter.",
+      "title": "Letrero vintage personalizado",
+      "price": "Desde $30",
+      "description": "Letreros tallados en madera, con tu nombre, tu local o tu diseño. Para bares en casa, cocinas, negocios y regalos con carácter.",
       "badge": "Edición vintage",
-      "whatsappText": "Hola! Quiero cotizar una tabla tallada estilo vintage"
+      "whatsappText": "Hola! Quiero cotizar un letrero vintage personalizado"
     }
   ],
+  "discount": {
+    "text": "¿Regalo grupal, boda o empresa? Desde 5 piezas, precio especial. Escríbenos por WhatsApp.",
+    "whatsappText": "Hola! Quiero cotizar 5 o más piezas personalizadas en madera"
+  },
+  "shippingNote": "El costo de envío depende de tu ciudad. Te lo confirmamos en la cotización, antes de que pagues.",
   "faq": [
+    {
+      "q": "¿Cuánto cuestan?",
+      "a": "Las tablas para picar empiezan en $7, las bandejas decorativas en $15 y los letreros vintage personalizados en $30. El precio final depende del tamaño, la madera y el diseño, y te lo confirmamos por WhatsApp antes de empezar. Desde 5 piezas hay precio especial."
+    },
+    {
+      "q": "¿Puedo ver el diseño antes de que lo corten?",
+      "a": "Sí, siempre. Antes de encender la máquina CNC te enviamos un render 3D de tu pieza y no cortamos hasta que lo apruebes. Es nuestra garantía de render 3D: recibes exactamente lo que apruebas."
+    },
     {
       "q": "¿Qué materiales usan?",
       "a": "Trabajamos con plywood, laurel y, bajo pedido, cedro y teca. También cortamos melamina, vinil acrílico y cintra. Para tablas y bandejas que tocan alimentos usamos madera sólida (laurel, cedro o teca)."
@@ -43,8 +67,8 @@
       "a": "Las tablas y bandejas para servir se hacen en madera sólida y se terminan con aceites importados aptos para contacto con alimentos y cera de naranja. Las piezas decorativas en plywood son para decoración, no para alimentos."
     },
     {
-      "q": "¿Puedo ver el diseño antes de que lo corten?",
-      "a": "Sí, siempre. Antes de encender la máquina CNC te enviamos un render 3D de tu pieza y no cortamos hasta que lo apruebes."
+      "q": "¿Hacen envíos a todo Ecuador?",
+      "a": "Sí, con envío garantizado. Enviamos por Servientrega o Tramaco Express a Quito, Guayaquil, Cuenca y el resto del país. El costo depende del destino y te lo confirmamos en la cotización, antes de que pagues. El tiempo habitual es de unos 5 días hábiles desde que apruebas el diseño."
     },
     {
       "q": "¿Qué puedo grabar?",
@@ -53,10 +77,6 @@
     {
       "q": "¿Dónde están ubicados?",
       "a": "Nuestro taller está en Riobamba, en la Av. Antonio José de Sucre, vía a Guano, pasando el Mall El Paseo Shopping."
-    },
-    {
-      "q": "¿Hacen envíos a todo Ecuador?",
-      "a": "Sí. Enviamos por Servientrega o Tramaco Express a Quito, Guayaquil, Cuenca y el resto del país, con envío garantizado. El tiempo habitual es de unos 5 días hábiles desde que apruebas el diseño."
     },
     {
       "q": "¿Tienen información en inglés?",
