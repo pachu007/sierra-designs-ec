@@ -76,7 +76,7 @@ export const LETREROS_CARDS: ProductCard[] = [
     title: "Man caves",
     description: "Tu espacio, tu estilo. Diseños rebeldes, escudos de fútbol retro, marcas de whisky o tu propio logotipo personalizado.",
     badge: "100% Personalizado",
-    image: photo('jd-room')
+    image: photo('jd-cnc')
   },
   {
     id: "l3",
@@ -118,7 +118,7 @@ export const LETREROS_CAROUSEL: CarouselItem[] = [
   },
   {
     id: "lc5",
-    src: photo('jd-room'),
+    src: photo('jd-harley'),
     alt: "Letrero de madera con forma de tapa de botella colgado en una pared, hecho por Sierra Designs",
     title: "Para tu bar en casa",
     description: "Pieza de bar en forma de tapa. Los diseños con marcas se hacen bajo encargo privado."
@@ -132,7 +132,7 @@ export const LETREROS_CAROUSEL: CarouselItem[] = [
   }
 ];
 
-const PRODUCT_IMAGES = [photo('cangrejal-board'), photo('anchor'), photo('hosteria')];
+const PRODUCT_IMAGES = [photo('cangrejal-board'), photo('anchor'), photo('jd-cap-card')];
 
 export const BANDEJAS_CARDS: ProductCard[] = copy.products.map((p, i) => ({
   id: `b${i + 1}`,
