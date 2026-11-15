@@ -33,7 +33,8 @@ import {
   GUARANTEE,
   DISCOUNT,
   SHIPPING_NOTE,
-  PROCESS_PHOTOS
+  PROCESS_PHOTOS,
+  CLIENTS
 } from './data';
 
 import TiltCard from './components/TiltCard';
@@ -357,6 +358,14 @@ export default function App() {
             <div className="w-1 h-2 bg-crema rounded-full animate-bounce" />
           </div>
         </div>
+      </section>
+
+      {/* Clientes que ya confiaron en nosotros */}
+      <section className="bg-negro-profundo text-crema py-5 px-4 border-b border-dorado/20">
+        <p className="max-w-5xl mx-auto text-center text-xs sm:text-sm text-crema/80">
+          <span className="font-mono uppercase tracking-widest text-dorado mr-2">Hecho para</span>
+          {CLIENTS.join(' · ')}
+        </p>
       </section>
 
       {/* GARANTÍA DE RENDER 3D: prueba visual (render aprobado vs pieza real) */}

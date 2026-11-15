@@ -32,10 +32,13 @@ export const GUARANTEE = {
 
 export const DISCOUNT = {
   image: photo('siete17-stack'),
-  alt: 'Pila de tablas de madera sólida con el logotipo de un restobar grabado, un pedido de varias piezas',
+  alt: 'Pila de tablas de madera sólida con el logotipo de un restobar grabado, un pedido de varias piezas para Siete17 Restobar',
   text: copy.discount.text,
   link: waLink(copy.discount.whatsappText)
 };
+
+// Clients shown in our photos (Fernando approved naming them)
+export const CLIENTS = ["Siete17 Restobar", "Hostería Luis Antonio", "Dejabu Smoke Shop, Cuenca", "El Cangrejal del Yoyo"];
 
 export const SHIPPING_NOTE = copy.shippingNote;
 
@@ -150,14 +153,14 @@ export const BANDEJAS_CAROUSEL: CarouselItem[] = [
   {
     id: "bc1",
     src: photo('siete17-stack'),
-    alt: "Pila de tablas de madera sólida con el logotipo de un restobar grabado, hechas en el taller de Sierra Designs",
-    title: "Pedido de varias piezas",
-    description: "Tablas de madera sólida grabadas con el logotipo de un restobar. Desde 5 piezas hay precio especial."
+    alt: "Pila de tablas de madera sólida con el logotipo de Siete17 Restobar grabado, hechas en el taller de Sierra Designs",
+    title: "Pedido para Siete17 Restobar",
+    description: "Tablas de madera sólida grabadas para Siete17 Restobar. Desde 5 piezas hay precio especial."
   },
   {
     id: "bc2",
     src: photo('siete17-board'),
-    alt: "Tabla de madera sólida con mango y logotipo grabado, lista para entregar sobre papel de seda",
+    alt: "Tabla de madera sólida con mango y el logotipo de Siete17 Restobar grabado, lista para entregar sobre papel de seda",
     title: "Tabla con mango",
     description: "Madera sólida con el logotipo grabado y acabado con aceites importados."
   },
