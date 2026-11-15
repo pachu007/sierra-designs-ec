@@ -616,6 +616,13 @@ export default function App() {
                   </p>
                 </div>
                 <a 
+                  href="/domo/"
+                  className="inline-flex items-center gap-1.5 text-verde-oscuro hover:text-dorado-hover font-bold text-xs uppercase tracking-wider cursor-pointer transition-colors mb-2"
+                >
+                  <span>Ver página de Domo</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+                <a 
                   href={TAMBIEN_HACEMOS.mascotas.link}
                   target="_blank" 
                   rel="noopener noreferrer"
