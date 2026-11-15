@@ -41,6 +41,7 @@ import TiltCard from './components/TiltCard';
 import Carousel from './components/Carousel';
 import ShippingTimeline from './components/ShippingTimeline';
 import CustomCursor from './components/CustomCursor';
+import { ChristmasSection, ChristmasPopup } from './components/ChristmasPromo';
 import heroWoodCnc from './assets/images/hero_wood_cnc_1783808468440.jpg';
 
 export function SierraLogo({ className = "w-10 h-10 text-dorado" }: { className?: string }) {
@@ -162,6 +163,7 @@ export default function App() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
+            <a href="#navidad" className="font-medium text-xs uppercase tracking-wider text-dorado hover:text-crema transition-all">Navidad</a>
             <a href="#regalos" className="font-medium text-xs uppercase tracking-wider text-crema hover:text-dorado transition-all">Regalos</a>
             <a href="#letreros" className="font-medium text-xs uppercase tracking-wider text-crema hover:text-dorado transition-all">Letreros</a>
             <a href="#envios" className="font-medium text-xs uppercase tracking-wider text-crema hover:text-dorado transition-all">Envíos</a>
@@ -302,7 +304,7 @@ export default function App() {
             </span>
           </div>
 
-          {SEASONAL_BANNER.enabled && (
+          {SEASONAL_BANNER.enabled && Date.now() < new Date('2026-12-16T00:00:00-05:00').getTime() && (
             <p className="mb-6 text-sm font-semibold text-negro-profundo bg-dorado inline-block rounded-full px-4 py-1.5">
               {SEASONAL_BANNER.text}
             </p>
@@ -369,6 +371,8 @@ export default function App() {
       </section>
 
       {/* GARANTÍA DE RENDER 3D: prueba visual (render aprobado vs pieza real) */}
+      <ChristmasSection />
+
       <section id="garantia" className="bg-verde-oscuro text-crema py-16 px-4 sm:px-6 lg:px-8 border-b border-dorado/20">
         <div className="max-w-5xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-10">
@@ -952,6 +956,8 @@ export default function App() {
 
         </div>
       </footer>
+
+      <ChristmasPopup />
 
     </div>
   );

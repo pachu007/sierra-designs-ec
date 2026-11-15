@@ -53,7 +53,7 @@ export const PROCESS_PHOTOS = [
 // Seasonal banner: set enabled to false (or delete) after the date passes. Nothing else depends on it.
 export const SEASONAL_BANNER = {
   enabled: true,
-  text: "Pedidos para Navidad: último día para ordenar, 15 de diciembre"
+  text: "Navidad: 2 bandejas por $20 + tablita de regalo. Pedidos hasta el 15 de diciembre"
 };
 
 export const HERO_DATA = {
@@ -269,3 +269,29 @@ export const CIUDADES_COBERTURA = [
   "Quito", "Cumbayá", "Guayaquil", "Cuenca", "Riobamba", "Ambato", "Loja", 
   "Manta", "Portoviejo", "Ibarra", "Machala", "Santo Domingo", "Cayambe", "Latacunga"
 ];
+
+// ---- Colección Navideña (2x1-style promo) ----
+// Shown until NAVIDAD.endsAt; the section and popup hide themselves automatically after that date.
+export const NAVIDAD = {
+  endsAt: '2027-01-01T00:00:00-05:00',       // popup + section hidden after Dec 31 (Ecuador time)
+  orderDeadlineEndsAt: '2026-12-16T00:00:00-05:00', // last Christmas order day: Dec 15
+  priceEach: 10,
+  promoPrice: 20,
+  size: '29 × 22 cm',
+  image: (n: number) => `/images/navidad/modelo-${n}.webp`,
+  models: [
+    { n: 1, name: 'Árbol de pino', detail: 'Ramas amplias, ideal para frutos secos' },
+    { n: 2, name: 'Gorro de Santa', detail: 'Con compartimento redondo lateral' },
+    { n: 3, name: 'Caja de regalo', detail: 'Dos compartimentos con moño' },
+    { n: 4, name: 'Estrella', detail: 'Perfecta para dulces y pretzels' },
+    { n: 5, name: 'Ángel', detail: 'Silueta con alas abiertas' },
+    { n: 6, name: 'Árbol con luces', detail: 'Tres compartimentos, grabado de luces' },
+    { n: 7, name: 'Reno', detail: 'Cabeza de reno con astas' },
+    { n: 8, name: 'Árbol oscuro', detail: 'Tres compartimentos, tono oscuro' },
+    { n: 9, name: 'Gorro con tacita', detail: 'Dos compartimentos y una tacita' },
+    { n: 10, name: 'Árbol para charcutería', detail: 'Tres compartimentos, tono nogal' }
+  ],
+  illustrativeNote: 'Imágenes ilustrativas del modelo. Antes de cortar ves un render 3D y lo apruebas tú.',
+  materialNote: 'Madera sólida de laurel, con aceites importados aptos para alimentos y cera de naranja.',
+  waLink: (text: string) => `https://wa.me/593960053637?text=${encodeURIComponent(text)}`
+};
