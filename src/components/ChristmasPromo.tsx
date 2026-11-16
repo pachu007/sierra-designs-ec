@@ -44,14 +44,14 @@ export const ChristmasSection: React.FC = () => {
           </h2>
           <div className="w-16 h-1 bg-dorado mx-auto rounded-full mb-4" />
           <p className="text-crema/85 text-sm sm:text-base leading-relaxed">
-            Elige cualquier 2 de los 10 modelos (${NAVIDAD.priceEach} cada una) y te regalamos una tablita de picar. Cada bandeja mide {NAVIDAD.size}. {NAVIDAD.materialNote}
+            Elige cualquier 2 de los {NAVIDAD.models.length} modelos (${NAVIDAD.priceEach} cada una) y te regalamos una tablita de picar. Cada bandeja mide {NAVIDAD.size}. {NAVIDAD.materialNote}
           </p>
           <p className="mt-3 inline-block bg-dorado text-negro-profundo text-xs sm:text-sm font-bold rounded-full px-4 py-1.5">
             {deadlineText}
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 mb-8 [&>*:last-child:nth-child(odd)]:col-span-2 [&>*:last-child:nth-child(odd)]:w-1/2 [&>*:last-child:nth-child(odd)]:justify-self-center md:[&>*:last-child:nth-child(odd)]:col-span-1 md:[&>*:last-child:nth-child(odd)]:w-auto">
           {NAVIDAD.models.map((m) => {
             const on = picked.includes(m.n);
             return (
@@ -154,7 +154,7 @@ export const ChristmasPopup: React.FC = () => {
           <p className="font-display text-base font-extrabold leading-snug">2 bandejas por ${NAVIDAD.promoPrice} + tablita de picar de regalo</p>
         </div>
       </div>
-      <p className="text-xs text-crema/75 mt-2">${NAVIDAD.priceEach} cada una, 10 modelos. {deadlineText}</p>
+      <p className="text-xs text-crema/75 mt-2">${NAVIDAD.priceEach} cada una, {NAVIDAD.models.length} modelos. {deadlineText}</p>
       <a
         href="#navidad"
         onClick={close}
