@@ -284,7 +284,12 @@ export const NAVIDAD = {
     { n: 2, name: 'Gorro de Santa', detail: 'Con compartimento redondo lateral' },
     { n: 3, name: 'Caja de regalo', detail: 'Dos compartimentos con moño' },
     { n: 4, name: 'Estrella', detail: 'Perfecta para dulces y pretzels' },
-    { n: 5, name: 'Ángel', detail: 'Silueta con alas abiertas' }
+    { n: 5, name: 'Ángel', detail: 'Silueta con alas abiertas' },
+    { n: 6, name: 'Árbol para charcutería', detail: 'Tres compartimentos, madera oscura' },
+    { n: 7, name: 'Reno', detail: 'Bandeja redonda con astas' },
+    { n: 8, name: 'Bastón de caramelo', detail: 'Larga, con franjas de maderas claras y rojizas' },
+    { n: 9, name: 'Galleta de jengibre', detail: 'Con carita y moño grabados' },
+    { n: 10, name: 'Árbol liso', detail: 'Un solo compartimento amplio' }
   ],
   illustrativeNote: 'Imágenes ilustrativas del modelo. Antes de cortar ves un render 3D y lo apruebas tú.',
   materialNote: 'Madera sólida de laurel, con aceites importados aptos para alimentos y cera de naranja.',
